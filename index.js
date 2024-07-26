@@ -249,19 +249,15 @@ function showCarInfo({
 console.log("Завдання 13 ====================================");
 console.log(showCarInfo(car)); // Виведе { brand: 'BMW', year: 2022, country: 'Unknown' }
 
-// Завдання 14: Додайте нову властивість до вбудованого об'єкту Array через літерал.
-// Створюємо функцію, яка буде додавати нову властивість до масиву
 function addProperty(array) {
   // Додаємо нову властивість customProperty до прототипу Array зі значенням myProperty
-  array.customProperty = "myProperty";
+  Array.prototype.customProperty = "myProperty";
+
   // Повертаємо переданий масив з новою властивістю
   return array;
 }
 
 console.log("Завдання 14 ====================================");
 // Створимо масив newArr з новою властивістю за допомогої нашої функції в яку передамо [1, 2, 3, 4, 5]
-let newArr = [1, 2, 3, 4, 5];
-
-addProperty(newArr);
-// Розкоментуйте рядок нижче після виконня завдання для перевірки
+let newArr = addProperty([1, 2, 3, 4, 5]);
 console.log(newArr.customProperty); // Виведе myProperty
